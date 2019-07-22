@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+    <title>遠隔・ロボットコントローラ</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='index.css')}}">
+</head>
+
+<body>
+<div>
+    <img src="{{url_for('visual_feed')}}">
+    <main>
+        <center>
+            <center>
+                <a href="#!" id="forward"><input type="button" value="前　進"></a>
+            </center>
+            <center>
+                <a href="#!" id="left"><input type="button" value="左旋回"></a>
+                <a href="#!" id="auto"><input type="button" value="追　跡"></a>
+                <a href="#!" id="right"><input type="button" value="右旋回"></a>
+            </center>
+            <center>
+                <a href="#!" id="back"><input type="button" value="後　退"></a>
+            </center>
+            キーコード：<input id="key" style="width:36px; height:25px; font-size:15pt;"/>
+        </center>
+    </main>
+</div>
+</body>
+    
+<script src="{{url_for('static', filename='index.js')}}"></script>
+<script>
+    temp = 0;
+    $(function(){
+        $("#key").on("keydown", function(e){
+            $(this).val(e.keyCode);
+            if(e.keyCode == 38 && e.keyCode != temp){
+                $.get("/forward");
+            }
+            else if(e.keyCode == 37 && e.keyCode != temp){
+                $.get("/left");
+            }
+            else if(e.keyCode == 32 && e.keyCode != temp){
+                $.get("/auto");
+            }
+            else if(e.keyCode == 39 && e.keyCode != temp){
+                $.get("/right");
+            }
+            else if(e.keyCode == 40 && e.keyCode != temp){
+                $.get("/back");
+            }
+            temp = e.keyCode;
+        }).on("keyup", function(e){
+            $(this).val("");
+            $.get("/stop");
+            temp = 0;
+        });
+        $("#forward").on("touchstart mousedown", function(){
+            $.get("/forward");
+        }).on("touchend mouseup", function(){
+            $.get("/stop");
+        });
+        $("#left").on("touchstart mousedown", function(){
+            $.get("/left");
+        }).on('touchend mouseup', function(){
+            $.get("/stop");
+        });
+        $("#auto").on("touchstart mousedown", function(){
+            $.get("/auto");
+        }).on("touchend mouseup", function(){
+            $.get("/stop");
+        });
+        $("#right").on("touchstart mousedown", function(){
+            $.get("/right");
+        }).on("touchend mouseup", function(){
+            $.get("/stop");
+        });
+        $("#back").on("touchstart mousedown", function(){
+            $.get("/back");
+        }).on("touchend mouseup", function(){
+            $.get("/stop");
+        });
+    });
+</script>
+
+</html>
