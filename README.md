@@ -25,13 +25,15 @@ VPNを使用・ファイアウォールの特定のポート番号の通信を�
 1. Pythonの使用可能な環境を用意してください．<br>
 Python 3.7.4 にて動作確認済みです．<br>
 
-2. 以下のコマンドで必要なパッケージをインストールしてください．
+2. 以下のコマンドで必要なパッケージをインストールしてください．<br>
+torch のインストールは，[こちらのリンク](https://pytorch.org/get-started/locally/)に従ってください．
+
 ```sh
-pip install opencv-python
-pip install flask
-pip install addict
-pip install torch
-pip install torchvision
+pip3 install opencv-python
+pip3 install flask
+pip3 install addict
+pip3 install torch
+pip3 install torchvision
 ```
 
 ### 顔検出システムを用いたコントローラの実行
@@ -46,7 +48,8 @@ pip install torchvision
 ### M2Det用いたコントローラの実行
 1. [こちらのリンク](https://drive.google.com/file/d/1NM1UDdZnwHwiNDxhcP-nndaWj24m-90L/)より，*m2det512_vgg.pth*をダウンロードし，*./configs*以下に配置してください．
 
-2. 以下のコマンドで実行できます．
+2. 以下のコマンドで実行できます．<br>
+GPU（CUDA）が使えない環境の場合は，
  > python3 run.py -m
 
 3. ifconfig もしくは ipconfig コマンドで**IPアドレス**を確認し，Webブラウザを使用可能な別の端末のブラウザに以下を入力することで動作します．
