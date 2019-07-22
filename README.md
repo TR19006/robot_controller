@@ -49,7 +49,7 @@ pip3 install torchvision
 1. [こちらのリンク](https://drive.google.com/file/d/1NM1UDdZnwHwiNDxhcP-nndaWj24m-90L/)より，*m2det512_vgg.pth*をダウンロードし，*./configs*以下に配置してください．
 
 2. 以下のコマンドで実行できます．<br>
-GPU（CUDA）が使えない環境の場合は，
+GPU（CUDA）が使えない環境の場合は，*./configs/m2det512_vgg.py*のをFalseに変更してください．
  > python3 run.py -m
 
 3. ifconfig もしくは ipconfig コマンドで**IPアドレス**を確認し，Webブラウザを使用可能な別の端末のブラウザに以下を入力することで動作します．
