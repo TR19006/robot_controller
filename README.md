@@ -2,7 +2,7 @@
 遠隔でロボットを制御するツール
 <br>
 物体検出機能を導入しているため，ロボットの自立的な制御を組み込むことが可能です．
-![overview image]()
+![overview image](https://github.com/TR19006/robot_controller/blob/master/imgs/sample.png)
 
 ## 必要な物
 1. カメラ内臓のPCまたは，PCおよびPCに接続可能なWebカメラ（ロボットを想定）<br>
