@@ -46,7 +46,7 @@ pip3 install torchvision
 ```
 
 ### M2Det用いたコントローラの実行
-1. [こちらのリンク](https://drive.google.com/file/d/1NM1UDdZnwHwiNDxhcP-nndaWj24m-90L/)より，*m2det512_vgg.pth*をダウンロードし，*./configs*以下に配置してください．
+1. [こちらのリンク](https://drive.google.com/file/d/1NM1UDdZnwHwiNDxhcP-nndaWj24m-90L/)より，*m2det512_vgg.pth*（学習済みモデル）をダウンロードし，*./configs*以下に配置してください．
 
 2. 以下のコマンドで実行します．<br>
 GPU（CUDA）が使えない環境の場合は，*./configs/m2det512_vgg.py*の*test_cfg*の*cuda*を**False**に変更してください．
